@@ -3,7 +3,7 @@
 This is a aggregated Social Feed app for consumer Facebook, and Twitter in a single Timeline.
 
 
-Time spent: 20 hrs
+Time spent: 35 hrs
 
 ### Features
 
@@ -17,10 +17,13 @@ Time spent: 20 hrs
 - [Done] User can click share in the timeline, and share with a custom message on a separate page.
 - [Done] User can click reply in the timeline, and submit a reply on a separate page.
 - [Done] User can click compose anywhere, and submit a new post on a separate page.
-
+- [Done] The feed should update in realtime without a page refresh using socket.io
+- [Done] Posts should be cached to minimize social network API requests
+- [Done] Social network API requests should only load the posts since the lastest cached post
 
 ### Optional
-
+[Done] Link google plus account
+[Done] Fetch posts from google plus and display it in timeline screen.
 - [ ] User can click a post and view it on a separate page with controls to share, like, and reply.
 - [ ] User should be able to unshare their posts.
 - [ ] User should be able to delete their posts.

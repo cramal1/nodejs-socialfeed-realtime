@@ -55,6 +55,20 @@ module.exports = (app) => {
                 access_token_secret: req.user.twitter.tokenSecret
             })
 
+            let tweetPosts = await Post.getPosts(networks.twitter.name, req.user.twitter.username)
+            let tweets
+            try {
+                //console.log(network, id, share)
+                if(tweetPosts.length > 0) {
+                    [tweets] = await twitterClient.promise.get('statuses/home_timeline', {since_id: tweetPosts[0].id})
+                } else {
+                    [tweets] = await twitterClient.promise.get('statuses/home_timeline')
+                }
+            
+            } catch (e) {
+                console.log(e.stack)
+            }        
+
             console.log('consumerKey: ' + twitterConfig.consumerKey)
             console.log('consumerSecret: ' + twitterConfig.consumerSecret)
             console.log('access_token_key: ' + req.user.twitter.token)
